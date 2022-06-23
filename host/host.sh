@@ -23,3 +23,6 @@ _PATH_NBD=${_ANSWER:-/vms/nbd}
 _source share.sh
 _source nbd.sh
 [ -f ${_PATH_SCRIPT}/sub/perso.sh ] && _source perso.sh
+
+_echoy "-----------------------------------------------"
+_echoyb "The installation of Host is done \nGo into the guest to complete installation"
