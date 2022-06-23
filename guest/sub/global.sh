@@ -9,7 +9,8 @@ path=${HOME}/.local/bin
 
 ### upgrade
 
-sudo apt remove -y gimp* libreoffice-* pidgin* thunderbird* transmission-gtk
+sudo apt remove -y bluema gimp* libreoffice-* pidgin* thunderbird* transmission-gtk
+sudo apt remove -y gnome-sudoku gnome-mines sgt-*
 sudo sed -i '/# deb .*partner$/ s|# ||' /etc/apt/sources.list
 sudo apt update
 sudo apt list --upgradable
