@@ -42,6 +42,8 @@ sudo rm /etc/localtime && sudo ln -sv /usr/share/zoneinfo/Etc/UTC /etc/localtime
 
 ##### QT5
 
+file=/etc/X11/Xsession.d/56xubuntu-session
+[ -f "${file}" ] && sudo sed -i '/export QT_QPA_PLATFORMTHEME=/ s|=.*$|=qt5ct|' ${file}
 export QT_QPA_PLATFORMTHEME=qt5ct # gtk2
 echo -e "\n# QT\nexport QT_QPA_PLATFORMTHEME=qt5ct " >> ~/.profile
 echo -e "\n#JAVA\nexport _JAVA_OPTIONS=\"-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel \${_JAVA_OPTIONS}\"" >> ~/.profile
