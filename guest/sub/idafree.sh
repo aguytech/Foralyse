@@ -27,3 +27,4 @@ sudo ln -sv ${path}/ida /usr/local/bin/idafree
 file=~/.local/share/applications/
 [ -f ${file} ] && rm ${file}
 cp ${_PATH_SCRIPT}/conf/idafree.desktop  ~/.local/share/applications/
+
