@@ -8,6 +8,9 @@ sudo apt install -y whois
 #### pwd & evtx & process
 sudo apt install -y john libscca-utils pev radare2
 
+# r2env via pip3
+python3 -m pip install -U r2env
+
 #### hive
 sudo apt install -y libhivex-bin chntpw reglookup
 
