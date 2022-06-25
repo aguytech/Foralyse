@@ -7,6 +7,10 @@ python3 -m pip install -U pefile yara-python capstone pycryptodome jsonschema le
 python3 -m pip install -U volatility3
 cd ~/.local/bin && ln -sv vol vol3
 
+_echoy vol3
+vol3 -h
+_ask
+
 ### volatility2
 
 # https://github.com/volatilityfoundation/volatility/wiki/Installation
@@ -50,5 +54,3 @@ sudo ln -sv vol.py vol2
 _echoy vol2
 vol2 -h
 
-_echoy vol3
-vol3 -h
