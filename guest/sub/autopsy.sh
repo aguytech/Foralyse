@@ -17,7 +17,6 @@ if [ -z "${file_soft}" ]; then
 fi
 
 file=/usr/local/bin/oracle-java-installer.sh
-#sudo curl -sS https://raw.githubusercontent.com/labcif/oracle-java-installer/master/oracle-java-installer.sh -o ${file}
 sudo curl -sS https://raw.githubusercontent.com/aguytech/oracle-java-installer/master/oracle-java-installer.sh -o ${file}
 sudo sed -i 's|tar -xvzf|tar -xzf|' /usr/local/bin/oracle-java-installer.sh
 sudo chmod +x ${file}
