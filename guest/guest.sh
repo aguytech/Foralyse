@@ -25,8 +25,8 @@ if [ -z "${_PATH_SHARE}" ]; then
 fi
 
 if [ -z "${_PATH_CASE}" ]; then
-	tmp=/foralyse/case
-	_ask "Give the path to mount case (${tmp}): "
+	tmp=/foralyse/cases
+	_ask "Give the path to mount cases (${tmp}): "
 	_PATH_CASE=${_ANSWER:-${tmp}}
 	sed -i "/^_PATH_CASE=/ s|=.*$|=${_PATH_CASE}|" ${_FILE_CONF}
 fi
@@ -41,16 +41,17 @@ fi
 # share
 if grep -q "^/hostshare.*${_PATH_SHARE}" /etc/fstab \
 	&& [ -d "${_PATH_SHARE}" ] \
-	&& ! grep -q "^/hostshare*${_PATH_SHARE}" /proc/mounts
+	&& ! grep -q "^/hostshare.*${_PATH_SHARE}" /proc/mounts
 then sudo mount ${_PATH_SHARE}
 fi
 
 ### sub
 
 _source share.sh
+_source cases.sh
 _source nbd.sh
 _source global.sh
-[ -f ${_PATH_SCRIPT}/sub/perso.sh ]  && _source perso.sh
+[ -f ${_PATH_SCRIPT}/perso/perso.sh ]  && . ${_PATH_SCRIPT}/perso/perso.sh
 _source forensic.sh
 _source autopsy.sh
 _source binwalk.sh
@@ -61,7 +62,6 @@ _source idafree.sh
 _source bytecode.sh
 _source luyten.sh
 _source cfr.sh
-[ -f ${_PATH_SCRIPT}/sub/sublimetext.sh ]  && _source sublimetext.sh
 # _source kali.sh
 #_source pandoc.sh
 _source clean.sh
