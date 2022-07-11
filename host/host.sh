@@ -4,9 +4,9 @@ _PATH_BASE=$( readlink -f ${0%/*} )
 
 ### functions
 
-file=${_PATH_BASE}/sub/inc
+file=${_PATH_BASE}/../inc
 ! [ -f "${file}" ] && echo "Unable to find file: ${file}" && exit 1
-! . ${file} && echo "Errors while importing ${file}" && exit 1
+! . ${file} && echo "Errors while sourcing file: ${file}" && exit 1
 
 ### begin
 

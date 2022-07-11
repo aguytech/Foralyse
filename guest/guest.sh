@@ -4,9 +4,9 @@ _PATH_BASE=$( readlink -f ${0%/*} )
 
 ### functions
 
-file=${_PATH_BASE}/sub/inc.sh
+file=${_PATH_BASE}/../inc
 ! [ -f "${file}" ] && echo "Unable to find file: ${file}" && exit 1
-! . ${file} && echo "Errors while importing ${file}" && exit 1
+! . ${file} && echo "Errors while sourcing file: ${file}" && exit 1
 
 ### begin
 
@@ -37,7 +37,8 @@ fi
 if grep -q "^/hostshare.*${_PATH_SHARE}" /etc/fstab \
 	&& [ -d "${_PATH_SHARE}" ] \
 	&& ! grep -q "^/hostshare.*${_PATH_SHARE}" /proc/mounts
-then sudo mount ${_PATH_SHARE}
+then
+	sudo mount ${_PATH_SHARE}
 fi
 
 ### sub
@@ -46,7 +47,7 @@ parts="share cases nbd global perso"
 parts+=" forensic autopsy binwalk regripper volatility"
 parts+=" wireshark idafree bytecode luyten cfr clean"
 # kali pandoc
-for part in {parts}: do
+for part in ${parts}; do
 	_source ${part}
 done
 
