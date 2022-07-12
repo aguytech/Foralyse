@@ -1,16 +1,20 @@
 #!/bin/bash
 
+######################## CONF
+
 _PATH_BASE=$( readlink -f ${0%/*} )
+_PATH_CONF=${HOME}/.config/foralyse
+_PATH_LOG=/var/log/foralyse
+_TRACE=info
 
-### functions
-
+# functions
 file=${_PATH_BASE}/../inc
 ! [ -f "${file}" ] && echo "Unable to find file: ${file}" && exit 1
 ! . ${file} && echo "Errors while sourcing file: ${file}" && exit 1
 
-### begin
+######################## BEGIN
 
-_echoyb "- Use from the HOST with Xubuntu 18.04 bionic already installed"
+_echoA "- Use from the HOST with Xubuntu 18.04 bionic already installed"
 
 anstmp=/vms/share
 _ask "Give the shared path from the Host (${anstmp}): "
@@ -23,9 +27,9 @@ sed -i "/^_PATH_NBD=/ s|=.*$|${_PATH_NBD}|" ${_FILE_CONF}
 
 ### sub
 
-_source share
-_source nbd
-_source perso
+_source_sub share
+_source_sub nbd
+_source_sub perso
 
-_echoy "-----------------------------------------------"
-_echoyb "The installation of Host is done \nGo into the guest to complete installation"
+_echoa "-----------------------------------------------"
+_echoA "The installation of Host is done \nGo into the guest to complete installation"

@@ -6,5 +6,5 @@ sudo apt install -y pandoc texlive-latex-base texlive-latex-recommended texlive-
 
 ### usage#!/bin/bash
 
-_echoyb "To use pandoc:"
+_echoA "To use pandoc:"
 echo "pandoc -s -o \$fileout \$filein"

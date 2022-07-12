@@ -1,16 +1,22 @@
 #!/bin/bash
 
+######################## CONF
+
+_PATH_BASE=$( readlink -f ${0%/*} )
+_PATH_CONF=${HOME}/.config/foralyse
+_PATH_LOG=/var/log/foralyse
+_TRACE=info
+
 _PATH_BASE=$( readlink -f ${0%/*} )
 
-### functions
-
+# functions
 file=${_PATH_BASE}/../inc
 ! [ -f "${file}" ] && echo "Unable to find file: ${file}" && exit 1
 ! . ${file} && echo "Errors while sourcing file: ${file}" && exit 1
 
-### begin
+######################## BEGIN
 
-_echoyb "- Use from the GUEST"
+_echoA "- Use from the GUEST"
 
 if [ -z "${_PATH_SHARE}" ]; then
 	anstmp=/foralyse/share
@@ -48,8 +54,8 @@ parts+=" forensic autopsy binwalk regripper volatility"
 parts+=" wireshark idafree bytecode luyten cfr clean"
 # kali pandoc
 for part in ${parts}; do
-	_source ${part}
+	_source_sub ${part}
 done
 
-_echoy "\n-----------------------------------------------"
-_echoyb "This installation is complete \nRestart the guest"
+_echoa "\n-----------------------------------------------"
+_echoA "This installation is complete \nRestart the guest"
