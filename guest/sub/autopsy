@@ -2,9 +2,9 @@
 
 ### global
 
-sudo apt-get update
+${_CMD} update
 ${_CMD_INS} afflib-tools testdisk ewf-tools xmount fdupes java-common
-sudo apt-get install -y imagemagick libde265-0 libheif1
+${_CMD_INS} imagemagick libde265-0 libheif1
 
 ### java
 

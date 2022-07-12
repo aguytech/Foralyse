@@ -38,10 +38,10 @@ ${_CMD_INS} dconf-editor engrampa galculator gpicview meld plank qt5ct qt5-gtk2-
 
 ### python
 
-sudo apt-get install -y python3 python3-pip
+${_CMD_INS} python3 python3-pip
 #python3 -m pip install -U pip grip
 
-sudo apt-get install -y python2 # python2-dev
+${_CMD_INS} python2 # python2-dev
 cd /tmp
 curl -sSL https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
 python2 get-pip.py
