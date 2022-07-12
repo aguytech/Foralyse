@@ -352,7 +352,7 @@ __function_install() {
 	# 1 variable name
 	# 2 optionnal file name
 	_confget() {
-		local file="${2:-${_FILE_CONF}}"file=
+		local file="${2:-${_FILE_CONF}}"
 		! [ -f "${file}" ] && _exite "unable to find '${file}' from ${FUNCNAME}"
 		#! [ -f "${file}" ] && return 1
 
