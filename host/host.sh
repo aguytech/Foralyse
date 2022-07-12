@@ -5,6 +5,8 @@
 _PATH_BASE=$( readlink -f ${0%/*} )
 _PATH_CONF=${HOME}/.config/foralyse
 _PATH_LOG=/var/log/foralyse
+_CMD="sudo apt"
+_CMD_INS="sudo apt install -y"
 _TRACE=info
 
 # functions

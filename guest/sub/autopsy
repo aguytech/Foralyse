@@ -3,7 +3,7 @@
 ### global
 
 sudo apt-get update
-sudo apt install -y afflib-tools testdisk ewf-tools xmount fdupes java-common
+${_CMD_INS} afflib-tools testdisk ewf-tools xmount fdupes java-common
 sudo apt-get install -y imagemagick libde265-0 libheif1
 
 ### java
@@ -37,7 +37,7 @@ fi
 # get versions
 # read sleuthkit_version_major sleuthkit_version_minor <<<$(echo ${file_soft}|sed 's|^.*/sleuthkit-java_\([0-9_\.]\+\)-\([0-9]\)_amd64.deb|\1 \2|')
 
-sudo apt install -y ${file_soft}
+${_CMD_INS} ${file_soft}
 
 ### autopsy
 

@@ -2,7 +2,7 @@
 
 ###  install
 
-sudo apt install -y qemu-utils
+${_CMD_INS} qemu-utils
 
 ###  conf
 

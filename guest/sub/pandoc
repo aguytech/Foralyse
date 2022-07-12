@@ -2,7 +2,7 @@
 
 ### install
 
-sudo apt install -y pandoc texlive-latex-base texlive-latex-recommended texlive-latex-extra
+${_CMD_INS} pandoc texlive-latex-base texlive-latex-recommended texlive-latex-extra
 
 ### usage#!/bin/bash
 

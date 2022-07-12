@@ -17,13 +17,13 @@ _askno "Validate to continue"
 
 ##### global
 
-sudo apt install -y pcregrep libpcre++-dev python-dev
+${_CMD_INS} pcregrep libpcre++-dev python-dev
 
 python2 -m pip install distorm3 ipython openpyxl pycrypto pytz ujson yara-python
 
 ##### libforensic1394
 
-sudo apt install -y cmake
+${_CMD_INS} cmake
 
 cd /tmp
 git clone https://github.com/FreddieWitherden/libforensic1394
@@ -37,8 +37,8 @@ sudo ln -sv /usr/local/lib/libforensic1394.so.0.3.0 /usr/lib/libforensic1394.so.
 
 cd
 sudo rm -fR /tmp/libforensic1394
-sudo apt remove -y cmake
-sudo apt -y autoremove
+${_CMD} remove -y cmake
+${_CMD} -y autoremove
 
 ##### volatility
 
