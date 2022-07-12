@@ -19,7 +19,7 @@ file=${_PATH_BASE}/../inc
 
 ######################## BEGIN
 
-_echoA "- Use from the GUEST with Xubuntu 18.04 bionic already installed"
+_echoA "- Use from the GUEST with Xubuntu 20.04 focal already installed"
 
 if [ -z "${_PATH_SHARE}" ]; then
 	anstmp=/foralyse/share
