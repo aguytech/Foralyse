@@ -21,7 +21,7 @@ file=${_PATH_BASE}/../inc
 
 ######################## BEGIN
 
-_echoA "- Use from the GUEST with Xubuntu 20.04 focal already installed"
+_echoA "- Use from the GUEST"
 
 if [ -z "${_PATH_SHARE}" ]; then
 	anstmp=/foralyse/share
