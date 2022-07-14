@@ -15,7 +15,7 @@ _FILE_CONF=${_PATH_CONF}/foralyse
 [ -f "${_FILE_CONF}" ] || { cp ${_PATH_BASE}/conf/foralyse ${_FILE_CONF}; }
 
 # functions
-file=${_PATH_BASE}/../inc
+file=${_PATH_REPO_BS}/inc
 ! [ -f "${file}" ] && echo "Unable to find file: ${file}" && exit 1
 ! . ${file} && echo "Errors while sourcing file: ${file}" && exit 1
 
@@ -39,7 +39,7 @@ fi
 
 if [ -z "${_PATH_NBD}" ]; then
 	anstmp=/foralyse/nbd
-	_askno "Give the path to mount dumped disk (${anstmp})"
+	_askno "Give the path to mount device files (${anstmp})"
 	_PATH_NBD=${_ANSWER:-${anstmp}}
 	_confset _PATH_NBD "${_PATH_NBD}"
 fi
@@ -50,17 +50,7 @@ if [ -z ${_HALT} ]; then
 	_confset _HALT "${_HALT}"
 fi
 
-######################## BEGIN
-
-# share
-if grep -q "^/hostshare.*${_PATH_SHARE}" /etc/fstab \
-	&& [ -d "${_PATH_SHARE}" ] \
-	&& ! grep -q "^/hostshare.*${_PATH_SHARE}" /proc/mounts
-then
-	sudo mount ${_PATH_SHARE}
-fi
-
-### sub
+######################## SUB
 
 parts="share cases nbd init global conf root perso"
 parts+=" forensic binwalk regripper autopsy volatility"
