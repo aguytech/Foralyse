@@ -44,7 +44,7 @@ if [ -z "${_PATH_NBD}" ]; then
 	_confset _PATH_NBD "${_PATH_NBD}"
 fi
 
-if [ -z ${_HALT+x} ]; then
+if [ -z ${_HALT} ]; then
 	_askyn "Enable halt between each parts?"
 	_HALT=${_ANSWER/n/}
 	_confset _HALT "${_HALT}"
